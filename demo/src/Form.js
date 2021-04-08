@@ -11,7 +11,7 @@ class Form extends Component {
         }
     }
     create = () => {
-console.log('create');
+        console.log('create');
         // console.log(personObj);
         if (this.state._id !== '') {
             let personObj = {
@@ -73,32 +73,33 @@ console.log('create');
     render() {
         return (<>
             <div>
-
-                <div className="row">
-                    <div className="col">
-                        <h4>Person Inforamation</h4>
+                <form>
+                    <div className="row">
+                        <div className="col">
+                            <h4>Person Inforamation</h4>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col">
-                        <input type='text' className='form-control' placeholder='Name' value={this.state.name} onChange={(event) => this.setState({ ...this.state, name: event.target.value })}></input>
+                    <div className="row">
+                        <div className="col">
+                            <input type='text' className='form-control' placeholder='Name' value={this.state.name} onChange={(event) => this.setState({ ...this.state, name: event.target.value })}></input>
+                        </div>
                     </div>
-                </div>
-                <div className="row mt-2">
-                    <div className="col">
-                        <input type='number' className='form-control' placeholder='Age' value={this.state.age} onChange={(event) => this.setState({ ...this.state, age: event.target.value })}></input>
+                    <div className="row mt-2">
+                        <div className="col">
+                            <input type='number' className='form-control' placeholder='Age' value={this.state.age} onChange={(event) => this.setState({ ...this.state, age: event.target.value })}></input>
+                        </div>
                     </div>
-                </div>
-                <div className="row mt-2">
-                    <div className="col">
-                        <input type='text' className='form-control' placeholder='City' value={this.state.city} onChange={(event) => this.setState({ ...this.state, city: event.target.value })}></input>
+                    <div className="row mt-2">
+                        <div className="col">
+                            <input type='text' className='form-control' placeholder='City' value={this.state.city} onChange={(event) => this.setState({ ...this.state, city: event.target.value })}></input>
+                        </div>
                     </div>
-                </div>
-                <div className="row mt-2">
-                    <div className="col">
-                        <button className='btn btn-primary' onClick={ this.create}>{this.state.isEdit ? 'Update' : 'Enter'}</button>
+                    <div className="row mt-2">
+                        <div className="col">
+                            <button type='submit' className='btn btn-primary' onClick={this.create}>{this.state.isEdit ? 'Update' : 'Enter'}</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </>);
     }

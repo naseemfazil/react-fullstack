@@ -49,11 +49,18 @@ class Crud extends Component {
     }
     delect = async (dataObj) => {
         console.log(dataObj._id);
-        let response = await axios.delect(`http://localhost:3001/student/del:${ dataObj._id}`);
-        if (response.status === 200) {
-            console.log('One object added');
-            console.log(response);
+        // let response = await axios.delect(`http://localhost:3001/student/del:${ dataObj._id}`);
+        // if (response.status === 200) {
+        //     console.log('One object added');
+        //     console.log(response);
+        // }
+        let option = window.confirm('Do you want delete this???')
+        if (option) {
+            axios.delete(`http://localhost:3001/student/del/${dataObj._id}`).then(res =>
+                console.log(res)
+            )
         }
+        this.view()
     }
     render() {
         return (<>
